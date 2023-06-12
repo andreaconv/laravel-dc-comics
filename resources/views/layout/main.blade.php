@@ -13,6 +13,8 @@
 
 <body class="bg-dark text-white">
 
+  @include('partials.header')
+
   <main>
     @yield('content')
   </main>
