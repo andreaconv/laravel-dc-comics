@@ -13,19 +13,19 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('comics', function (Blueprint $table) {
-            $table->id();
-            $table->string('title')->nullable();
-            $table->text('description')->nullable();
-            $table->text('thumb')->nullable();
-            $table->string('price')->nullable();
-            $table->string('series')->nullable();
-            $table->date('sale_date')->nullable();
-            $table->string('type')->nullable();
-            $table->string('artists')->nullable();
-            $table->string('writers')->nullable();
-            $table->timestamps();
-        });
+      Schema::create('comics', function (Blueprint $table) {
+        $table->id();
+        $table->string('title')->nullable();
+        $table->text('description')->nullable();
+        $table->text('thumb')->nullable();
+        $table->string('price')->nullable();
+        $table->string('series')->nullable();
+        $table->date('sale_date')->nullable();
+        $table->string('type')->nullable();
+        $table->string('artists')->nullable();
+        $table->string('writers')->nullable();
+        $table->timestamps();
+      });
     }
 
     /**
