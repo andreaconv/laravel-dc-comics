@@ -34,6 +34,7 @@
       <h4>Artisti</h4>
       {{-- TODO: fare l'explode dell'array, aggiustare l'elenco separato dal | pipe --}}
       <p>{{ $comic->artists }}</p>
+      {{-- <p>{{  explode("|",$comic->artists)}}</p> --}}
 
       <a href="{{ route('comics.index') }}" class="btn btn-primary">Torna ai fumetti</a>
       <a href="{{ route('comics.edit', $comic) }}" class="btn btn-warning">Modifica</a>
