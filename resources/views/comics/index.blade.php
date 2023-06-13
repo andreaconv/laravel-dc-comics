@@ -5,7 +5,7 @@
   <div class="container">
     <h1>Comics</h1>
 
-    <table class="table table-striped">
+    <table class="table table-striped table-dark">
       <thead>
         <tr>
           <th>Id</th>
