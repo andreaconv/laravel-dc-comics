@@ -24,7 +24,7 @@
 
       <div class="mb-3">
         <label for="title" class="form-label">Titolo</label>
-        <input type="text" class="form-control" name="title" id="title" value="{{ old('title') }}" placeholder="Titolo">
+        <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" id="title" value="{{ old('title') }}" placeholder="Titolo">
         @error('title')
           <p class="text-danger">{{ $message }}</p>
         @enderror
@@ -44,7 +44,7 @@
 
         <div class="mb-3 d-inline-block">
           <label for="price" class="form-label">Prezzo</label>
-          <input type="text" class="form-control" name="price" id="price" value="{{ old('price') }}" placeholder="Prezzo">
+          <input type="text" class="form-control @error('price') is-invalid @enderror" name="price" id="price" value="{{ old('price') }}" placeholder="Prezzo">
           @error('price')
             <p class="text-danger">{{ $message }}</p>
           @enderror
