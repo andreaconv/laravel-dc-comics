@@ -39,6 +39,12 @@
       <a href="{{ route('comics.index') }}" class="btn btn-primary">Torna ai fumetti</a>
       <a href="{{ route('comics.edit', $comic) }}" class="btn btn-warning">Modifica</a>
 
+      <form action="{{ route('comics.destroy', $comic) }}" method="POST" class="d-inline" onsubmit="return confirm('Confermi l\'eliminazione del prodotto: {{ $comic->title }} ?')">
+        @csrf
+        @method('DELETE')
+        <button type="submit" class="btn btn-danger" title="Elimina">Elimina</button>
+      </form>
+
     </div>
 
   </div>
