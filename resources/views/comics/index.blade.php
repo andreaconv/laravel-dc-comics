@@ -21,8 +21,14 @@
             <td>{{ $comic->title }}</td>
             <td>{{ $comic->series }}</td>
             <td>
-              <a href="{{ route('comics.show', $comic) }}" class="btn btn-success">Vai</a>
-              <a href="{{ route('comics.edit', $comic) }}" class="btn btn-warning">Modifica</a>
+              <a href="{{ route('comics.show', $comic) }}" class="btn btn-success" title="Visualizza">Vai</a>
+              <a href="{{ route('comics.edit', $comic) }}" class="btn btn-warning" title="Modifica">Modifica</a>
+
+              <form action="{{ route('comics.destroy', $comic) }}" method="POST" class="d-inline" onsubmit="return confirm('Confermi l\'eliminazione del prodotto: {{ $comic->title }} ?')">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger" title="Elimina">Elimina</button>
+              </form>
             </td>
 
           </tr>
