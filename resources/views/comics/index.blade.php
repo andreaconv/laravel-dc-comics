@@ -11,7 +11,7 @@
           <th>Id</th>
           <th>Titolo</th>
           <th>Serie</th>
-          <th>Azione</th>
+          <th>Azioni</th>
         </tr>
       </thead>
       <tbody>
@@ -20,7 +20,11 @@
             <th scope="row">{{ $comic->id}}</th>
             <td>{{ $comic->title }}</td>
             <td>{{ $comic->series }}</td>
-            <td><a href="{{ route('comics.show', $comic) }}" class="btn btn-success">Vai</a></td>
+            <td>
+              <a href="{{ route('comics.show', $comic) }}" class="btn btn-success">Vai</a>
+              <a href="{{ route('comics.edit', $comic) }}" class="btn btn-warning">Modifica</a>
+            </td>
+
           </tr>
         @endforeach
 
