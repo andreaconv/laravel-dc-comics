@@ -5,6 +5,12 @@
   <div class="container">
     <h1>Comics</h1>
 
+    @if (session('deleted'))
+      <div class="alert alert-success" role="alert">
+        {{ session('deleted') }}
+      </div>
+    @endif
+
     <table class="table table-striped table-dark">
       <thead>
         <tr>
