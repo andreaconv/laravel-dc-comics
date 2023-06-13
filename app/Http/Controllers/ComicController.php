@@ -41,6 +41,7 @@ class ComicController extends Controller
 
       $new_comic = new Comic();
 
+      // FIXME: la funzione che genera lo slug non funziona, controllare il Model
       $form_data['slug'] = Comic::generateSlug($form_data['title']);
 
       $new_comic->fill($form_data);

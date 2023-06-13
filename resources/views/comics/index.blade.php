@@ -5,6 +5,8 @@
   <div class="container">
     <h1>Comics</h1>
 
+    {{-- FIXME: l'ID è incrementato anche quando un elemento viene eliminato --}}
+
     @if (session('deleted'))
       <div class="alert alert-success" role="alert">
         {{ session('deleted') }}

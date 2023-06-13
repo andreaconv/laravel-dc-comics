@@ -31,6 +31,7 @@ class ComicRequest extends FormRequest
     ];
   }
 
+  // FIXME: I messaggi generati sono in inglese!!
   public function message()
   {
     return [

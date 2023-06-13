@@ -5,6 +5,7 @@
   <div class="container">
     <h1>{{ $comic->title }}</h1>
 
+    {{-- FIXME: I messaggi generati sono in inglese!! --}}
     @if ($errors->any())
       <div class="alert alert-danger" role="alert">
         <ul>
@@ -26,7 +27,14 @@
 
       <div class="mb-3">
         <label for="title" class="form-label">Titolo</label>
-        <input type="text" class="form-control" name="title" id="title" value="{{ old('title', $comic->title) }}" placeholder="Titolo">
+        <input
+          type="text"
+          class="form-control"
+          name="title"
+          id="title"
+          value="{{ old('title', $comic->title) }}"
+          placeholder="Titolo">
+
         @error('title')
           <p class="text-danger">{{ $message }}</p>
         @enderror
