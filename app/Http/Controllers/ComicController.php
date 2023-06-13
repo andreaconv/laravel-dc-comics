@@ -69,7 +69,7 @@ class ComicController extends Controller
      */
     public function edit(Comic $comic)
     {
-        //
+      return view('comics.edit', compact('comic'));
     }
 
     /**
@@ -79,9 +79,19 @@ class ComicController extends Controller
      * @param  \App\Models\Comic  $comic
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Comic $comic)
+    public function update(ComicRequest $request, Comic $comic)
     {
-        //
+      $form_data = $request->all();
+
+      if($comic->title != $form_data['title']){
+        $form_data['slug'] = Comic::generateSlug($form_data['title']);
+      }else{
+        $form_data['slug'] = $comic->slug;
+      }
+
+      $comic->update($form_data);
+
+      return view('comics.show', compact('comic'));
     }
 
     /**
